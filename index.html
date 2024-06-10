@@ -13,14 +13,21 @@
 
     <main>
         <section id="video-container">
-            <div id="player"></div>
+            <video id="main-video" controls>
+                <source src="videos/Aadil - space-edit.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div id="choices" class="hidden">
                 <button onclick="navigate(30)">Option 1</button>
-                <button onclick="navigate(60)">Option 2</button>
+                <button onclick="navigate(30)">Option 2</button>
             </div>
-            <div id="custom-controls">
-                <button id="custom-play-button" onclick="togglePlay()">Play</button>
-                <button id="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</button>
+            <div id="choices2" class="hidden">
+                <button onclick="navigate(60)">Option 3</button>
+                <button onclick="navigate(60)">Option 4</button>
+            </div>
+            <div id="choices3" class="hidden">
+                <button onclick="navigate(60)">Option 5</button>
+                <button onclick="navigate(60)">Option 6</button>
             </div>
         </section>
 
@@ -40,7 +47,7 @@
                     <h3>Pathway 2</h3>
                     <ul class="steps">
                         <li>Step 1: Watch the initial video</li>
-                        <li>Step 2: Choose Option 2 (60 seconds)</li>
+                        <li>Step 2: Choose Option 2 (30 seconds)</li>
                         <li>Step 3: Follow through to the end</li>
                     </ul>
                 </div>
@@ -52,8 +59,6 @@
         <p>Contact us at <a href="mailto:contact@shortfilm.com">contact@shortfilm.com</a></p>
     </footer>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 </html>
-

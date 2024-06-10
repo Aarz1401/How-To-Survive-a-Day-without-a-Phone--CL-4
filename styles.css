@@ -33,13 +33,17 @@ main {
     margin-bottom: 20px;
 }
 
-#choices {
-    display: flex;
+video {
+    width: 100%;
+    height: auto;
+}
+
+#choices,#choices2,#choices3 {
     justify-content: center;
     margin-top: 10px;
 }
 
-#choices button {
+#choices button, #choices2 button , #choices3 button{
     padding: 10px 20px;
     margin: 0 10px;
     background-color: #4CAF50;
@@ -49,8 +53,12 @@ main {
     transition: background-color 0.3s ease;
 }
 
-#choices button:hover {
+#choices button:hover, #choices2 button:hover , #choices3 button:hover{
     background-color: #45a049;
+}
+
+.hidden{
+    display: none;
 }
 
 #about {
@@ -147,44 +155,3 @@ footer a {
 .hidden {
     display: none;
 }
-
-#custom-controls, #choices {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    z-index: 1000; /* Ensure custom controls are on top */
-}
-
-#custom-controls.fullscreen, #choices.fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-#custom-play-button, #fullscreen-button, #choices button {
-    padding: 10px 20px;
-    background-color: rgba(76, 175, 80, 0.8);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    pointer-events: all;
-    margin: 5px;
-    z-index: 1001; /* Ensure buttons are on top */
-}
-
-#custom-play-button:hover, #fullscreen-button:hover, #choices button:hover {
-    background-color: rgba(69, 160, 73, 0.8);
-}
-
-#choices.hidden {
-    display: none;
-}
-
-

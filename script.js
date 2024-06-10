@@ -1,100 +1,60 @@
-let player;
-let choices;
-let playButton;
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById('main-video');
+    const choices = document.getElementById('choices');
+    const choices2 = document.getElementById('choices2');
+    const choices3 = document.getElementById('choices3');
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: 'A6HhDFskbXs',  // Replace with your YouTube video ID
-        playerVars: {
-            'controls': 0,        // Hide the player controls
-            'disablekb': 1,       // Disable keyboard controls
-            'modestbranding': 1,  // Hide the YouTube logo
-            'rel': 0,             // Disable related videos
-            'showinfo': 0,        // Hide video title and uploader info
-            'iv_load_policy': 3,  // Hide video annotations
-            'autohide': 1,        // Hide controls when playing
-            'cc_load_policy': 0,  // Don't show closed captions by default
-            'playsinline': 1,     // Play video inline on mobile devices
-        },
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+    video.addEventListener('timeupdate', function() {
+        if (Math.floor(video.currentTime) === 15) {
+            video.pause();
+            video.controls = false;  // Disable controls
+            choices.classList.remove('hidden');
+        } else if (Math.floor(video.currentTime) === 20) {
+            video.pause();
+            video.controls = false;  // Disable controls
+            choices2.classList.remove('hidden');
+        } else if (Math.floor(video.currentTime) === 25) {
+            video.pause();
+            video.controls = false;  // Disable controls
+            choices3.classList.remove('hidden');
+        } else {
+            choices.classList.add('hidden');
+            choices2.classList.add('hidden');
+            choices3.classList.add('hidden');
         }
     });
-}
 
-function onPlayerReady(event) {
-    choices = document.getElementById('choices');
-    playButton = document.getElementById('custom-play-button');
-    playButton.style.display = 'block';
-}
-
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-        playButton.textContent = 'Pause';
-    } else {
-        playButton.textContent = 'Play';
-    }
-}
-
-function checkTime() {
-    const currentTime = player.getCurrentTime();
-    if ((currentTime >= 15 && currentTime < 16) || (currentTime >= 25 && currentTime < 26)) {
-        player.pauseVideo();
-        choices.classList.remove('hidden');
-        playButton.style.display = 'none';  // Hide custom play button when choices are shown
-    }
-}
-
-function navigate(time) {
-    player.seekTo(time);
-    player.playVideo();
-    choices.classList.add('hidden');
-    playButton.style.display = 'block';  // Show custom play button when choices are hidden
-}
-
-function togglePlay() {
-    if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-        player.pauseVideo();
-    } else {
-        player.playVideo();
-    }
-}
-
-function toggleFullscreen() {
-    const iframe = document.getElementById('player');
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
+    function navigate(time) {
+        video.currentTime = time;
+        video.play();
+        video.controls = true;  // Enable controls
+        choices.classList.add('hidden');
+        choices2.classList.add('hidden');
+        choices3.classList.add('hidden');
     }
 
-    // Listen for fullscreen change events
-    document.addEventListener('fullscreenchange', onFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
-    document.addEventListener('mozfullscreenchange', onFullscreenChange);
-    document.addEventListener('MSFullscreenChange', onFullscreenChange);
-}
+    // Ensure buttons hide when clicked
+    const buttons1 = choices.querySelectorAll('button');
+    const buttons2 = choices2.querySelectorAll('button');
+    const buttons3 = choices3.querySelectorAll('button');
 
-function onFullscreenChange() {
-    const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-    const customControls = document.getElementById('custom-controls');
-    const choices = document.getElementById('choices');
-    if (isFullscreen) {
-        customControls.classList.add('fullscreen');
-        choices.classList.add('fullscreen');
-    } else {
-        customControls.classList.remove('fullscreen');
-        choices.classList.remove('fullscreen');
-    }
-}
+    buttons1.forEach(button => {
+        button.addEventListener('click', function() {
+            choices.classList.add('hidden');
+        });
+    });
 
-window.navigate = navigate;  // Make the navigate function accessible globally
+    buttons2.forEach(button => {
+        button.addEventListener('click', function() {
+            choices2.classList.add('hidden');
+        });
+    });
 
-setInterval(checkTime, 1000);  // Check the video time every second
+    buttons3.forEach(button => {
+        button.addEventListener('click', function() {
+            choices3.classList.add('hidden');
+        });
+    });
+
+    window.navigate = navigate;  // Make the navigate function accessible globally
+});
