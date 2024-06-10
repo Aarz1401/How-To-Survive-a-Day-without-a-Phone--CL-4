@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--Bismark here-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,13 +13,14 @@
 
     <main>
         <section id="video-container">
-            <video id="main-video" controls>
-                <source src="videos/Aadil - space-edit.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div id="player"></div>
             <div id="choices" class="hidden">
                 <button onclick="navigate(30)">Option 1</button>
                 <button onclick="navigate(60)">Option 2</button>
+            </div>
+            <div id="custom-controls">
+                <button id="custom-play-button" onclick="togglePlay()">Play</button>
+                <button id="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</button>
             </div>
         </section>
 
@@ -52,6 +52,8 @@
         <p>Contact us at <a href="mailto:contact@shortfilm.com">contact@shortfilm.com</a></p>
     </footer>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
