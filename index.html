@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survive a Day Without a Phone</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1>Home</h1>
-    <p>Welcome to the home page.</p>
-    <p><a href="about.php">About</a></p>
-</body>
+    <header>
+        <h1>How to Survive a Day Without a Phone</h1>
+    </header>
 
+    <main>
+        <section id="video-container">
+            <video id="main-video" controls>
+                <source src="initial_video.mov" type="video/quicktime">
+                Your browser does not support the video tag.
+            </video>
+            <div id="choices" class="hidden">
+                <button onclick="navigate(30)">Option 1</button>
+                <button onclick="navigate(60)">Option 2</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About the Film</h2>
+            <p>This interactive film explores different ways to survive a day without a phone. Choose your path wisely!</p>
+            <div id="pathways">
+                <div class="pathway">
+                    <h3>Pathway 1</h3>
+                    <ul class="steps">
+                        <li>Step 1: Watch the initial video</li>
+                        <li>Step 2: Choose Option 1 (30 seconds)</li>
+                        <li>Step 3: Follow through to the end</li>
+                    </ul>
+                </div>
+                <div class="pathway">
+                    <h3>Pathway 2</h3>
+                    <ul class="steps">
+                        <li>Step 1: Watch the initial video</li>
+                        <li>Step 2: Choose Option 2 (60 seconds)</li>
+                        <li>Step 3: Follow through to the end</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at <a href="mailto:contact@shortfilm.com">contact@shortfilm.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

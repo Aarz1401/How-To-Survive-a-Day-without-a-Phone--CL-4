@@ -1,11 +1,160 @@
 /* styles.css */
 
 /* Reset default styles */
-body,
-h1,
-p {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#video-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+#choices {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#choices button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#choices button:hover {
+    background-color: #45a049;
+}
+
+#about {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+#pathways {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pathway {
+    flex: 1 1 45%;
+    margin: 10px;
+    background: linear-gradient(135deg, #e3f2fd, #90caf9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pathway:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pathway h3 {
+    text-align: center;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.steps {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.steps li {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.steps li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+.steps li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 40px;
+    background-color: #4CAF50;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Additional styles */
+.hidden {
+    display: none;
+}
+
 
 /* Add your CSS styles here */

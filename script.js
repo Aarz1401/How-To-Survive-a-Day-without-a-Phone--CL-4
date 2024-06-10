@@ -1,9 +1,22 @@
 
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById('main-video');
+    const choices = document.getElementById('choices');
 
-// Import any necessary modules or libraries here
+    video.addEventListener('timeupdate', function() {
+        if (video.currentTime >= 15 && video.currentTime < 16 || video.currentTime >= 25 && video.currentTime < 26) {
+            video.pause();
+            video.controls = false;  // Disable controls
+            choices.classList.remove('hidden');
+        }
+    });
 
-// Define your functions or variables here
+    function navigate(time) {
+        video.currentTime = time;
+        video.play();
+        video.controls = true;  // Enable controls
+        choices.classList.add('hidden');
+    }
 
-// Write your code here
-
-// Call any necessary functions or execute your code here
+    window.navigate = navigate;  // Make the navigate function accessible globally
+});
