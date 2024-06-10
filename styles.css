@@ -140,3 +140,20 @@ footer a {
 .hidden {
     display: none;
 }
+
+.email-links a {
+    margin-right: 15px; /* Add space between email addresses */
+    text-decoration: none; 
+    color: black; 
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center-align icon with text */
+}
+
+.email-links a i {
+    margin-right: 5px; /* Space between icon and email address */
+}
+
+.email-links a:last-child {
+    margin-right: 0; /* Remove margin for the last email address */
+}
+
