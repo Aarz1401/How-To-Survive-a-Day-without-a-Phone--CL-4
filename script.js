@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
             video.controls = false;  // Disable controls
             choices.classList.remove('hidden');
             heartbeat.play();  // Play heartbeat sound
-        } else if (Math.floor(video.currentTime) === 94) {
+        } else if (Math.floor(video.currentTime) === 91) {
             video.pause();
             video.controls = false;  // Disable controls
             choices2.classList.remove('hidden');
             heartbeat.play();  // Play heartbeat sound
-        } else if (Math.floor(video.currentTime) === 158) {
+        } else if (Math.floor(video.currentTime) === 151) {
             video.pause();
             video.controls = false;  // Disable controls
             choices3.classList.remove('hidden');
@@ -93,3 +93,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.navigate = navigate;  // Make the navigate function accessible globally
 });
+
+
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    const headerOffset = 150; // Adjust this value based on your header height
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}

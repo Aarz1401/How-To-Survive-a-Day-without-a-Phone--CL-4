@@ -6,38 +6,38 @@
     <title>Survive a Day Without a Phone</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome -->
+    
 </head>
 <body>
-    <header>
-        <header>
-            <h1>How to Survive a Day Without Your Phone</h1>
-            <div class="header-buttons">
-                <button onclick="scrollToSection('video-container')">Watch Video</button>
-                <button onclick="scrollToSection('about')">About the Film</button>
-            </div>
-        </header>
     
-    </header>
-
+    <div class ="header">
+        <h2>How to Survive a Day Without Your Phone</h2>
+        <div class="header-buttons">
+            <button onclick="scrollToSection('video-container')">Watch Video</button>
+            <button onclick="scrollToSection('about')">About the Film</button>
+        </div>
+    </div>
     <main>
+    </div>
         <section id="video-container">
+            <h2 id = "film">Film</h2>
             <video id="main-video" controls>
-                <source src="videos/Assignment 4.mp4" type="video/mp4">
+                <source src="videos/Final Version Assignment 4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div id="choices" class="hidden">
-                <button onclick="navigate(40, 66, 87)">Option 1: Search for your phone</button>
+                <button onclick="navigate(37, 64, 84)">Option 1: Search for your phone</button>
                 <button onclick="navigate(68)">Option 2: Go to breakfast</button>
                 <h2> Make a Choice !!!</h2>
             </div>
             <div id="choices2" class="hidden">
-                <button onclick="navigate(95, 111, 138)">Option 1: Say yes</button>
-                <button onclick="navigate(111)">Option 2: Say no</button>
+                <button onclick="navigate(92, 106, 131)">Option 1: Say yes</button>
+                <button onclick="navigate(107)">Option 2: Say no</button>
                 <h2> Make a Choice !!!</h2>
             </div>
             <div id="choices3" class="hidden">
-                <button onclick="navigate(163, 191, 213)">Option 1: Take a walk in the park</button>
-                <button onclick="navigate(192)">Option 2: Go to have early dinner with friends</button>
+                <button onclick="navigate(156, 180, 203)">Option 1: Take a walk in the park</button>
+                <button onclick="navigate(182)">Option 2: Go to have early dinner with friends</button>
                 <h2> Make a Choice !!!</h2>
             </div>
             <audio id="heartbeat" loop>
@@ -46,37 +46,28 @@
             </audio>
             <h5>Note:  For best experience, do not skip any part </h5>
         </section>
-
+        <hr>
         <section id="about">
-            <h2>About the Film</h2>
-            <p>This interactive film explores different ways to survive a day without a phone. Choose your path wisely!</p>
-            <div id="options">
-                <div class="option">
-                    <h3>Choice 1</h3>
-                    <ul class="steps">
-                        <li>Option 1: Search for your phone</li>
-                        <li>Option 2: Go to breakfast</li>
-                    </ul>
-                </div>
-                <div class="option">
-                    <h3>Choice 2</h3>
-                    <ul class="steps">
-                        <li>Option 1: Say yes</li>
-                        <li>Option 2: Say no</li>
-                    </ul>
-                </div>
-                <div class="option">
-                    <h3>Choice 3</h3>
-                    <ul class="steps">
-                        <li>Option 1: Take a walk in the park</li>
-                        <li>Option 2: Go to have early dinner with friends</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+            <h2 id ="aboutFilm">About the Film</h2>
+            <p id = "aboutParagraph">This interactive film explores different ways to survive a day without a phone. It follows 
+                the Story of a boy named Tom who wakes up to find his phone missing and must face 
+                the ultimate challenge of surviving a day without it. Throughout the day, he navigates the chaos of missing his phone
+                , from awkwardly interacting with friends to discovering alternative sources of entertainment like sketching and appreciating nature.
+                Despite initial panic and loneliness, Tom learns to embrace creative conversations, reconnect with the world around him,
+                and enjoy genuine human connections. By the end of the day, he reflects positively on his experience, realising that life without a 
+                phone can be fulfilling and enjoyable. <br>
+                <br>
 
+                At various stages, You get an option to choose Alex's path , choose your path wisely !!</p>
+            
+        </section>
+        
+    </main>
+    
     <footer>
+        <div id="credits">
+            <p>Created by Aadil, Shereena, Hamdah and Bismark, Summer 2024</p>
+        <div>
         <p class="email-links">
             <a href="mailto:aac10066@nyu.edu"><i class="fas fa-envelope"></i> aac10066@nyu.edu</a>
             <a href="mailto:bb3621@nyu.edu"><i class="fas fa-envelope"></i> bb3621@nyu.edu</a>
@@ -84,12 +75,6 @@
             <a href="mailto:sa6607@nyu.edu"><i class="fas fa-envelope"></i> sa6607@nyu.edu</a>
         </p>
     </footer>
-
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 
     <script src="script.js"></script>
 </body>

@@ -11,11 +11,19 @@ body {
     min-height: 100vh;
 }
 
-header {
+section{
+    height:100vh;
+
+}
+
+.header {
     background-color: #4CAF50;
     color: white;
     padding: 10px 0;
     text-align: center;
+    position:fixed;
+    width:100%;
+    z-index: 9999;
 }
 
 .header-buttons {
@@ -44,6 +52,7 @@ header {
 main {
     flex: 1;
     padding: 20px;
+    margin-top:150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,11 +60,21 @@ main {
 
 #video-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+}
+
+hr {
+    background-color: rgb(217, 248, 215); /* Sets the color to white */
+    width: 100%; /* Sets the width to 100% */
+    height: 10px; /* Sets the height to 10px */
+    border: none; /* Removes the default border */
+    z-index: 9998; /* Sets the z-index, useful if position is specified */
+    position: relative; /* Ensures the z-index works correctly */
+    overflow:hidden;
 }
 
 video {
@@ -103,61 +122,24 @@ video {
     margin-top: 40px;
 }
 
-#about h2 {
+
+#aboutFilm {
     text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Darker color for the heading */
 }
 
-#options {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.option {
-    width: 48%; /* Adjust width as necessary */
-    background-color: #e0f0ff; /* Optional: add background color for visibility */
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: add shadow for styling */
-    border-radius: 10px; /* Optional: add border radius for rounded corners */
-}
-
-.option h3 {
-    text-align: center;
-}
-
-.steps {
-    list-style-type: none;
-    padding: 0;
-}
-
-.steps li {
-    margin-bottom: 15px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Optional: add shadow for styling */
-}
-.steps li::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-}
-
-.steps li:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2px;
-    height: 40px;
-    background-color: #4CAF50;
+#aboutParagraph {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555; /* Slightly lighter color for the paragraph text */
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center align the paragraph */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3); /* White background for the paragraph */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 footer {
@@ -193,3 +175,11 @@ footer a {
     margin-right: 0; /* Remove margin for the last email address */
 }
 
+#credits {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius:10px;
+}
