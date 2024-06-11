@@ -1,3 +1,6 @@
+/* Aadil Chasmawala , June 2024 */
+
+/* Reset CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,6 +19,7 @@ section{
 
 }
 
+/* styles for header*/
 .header {
     background-color: #4CAF50;
     color: white;
@@ -49,6 +53,7 @@ section{
     color: white;
 }
 
+/* styles for main */
 main {
     flex: 1;
     padding: 20px;
@@ -58,6 +63,7 @@ main {
     align-items: center;
 }
 
+/* styles for video-container, video and choices */
 #video-container {
     width: 100%;
     max-width: 1000px;
@@ -67,15 +73,6 @@ main {
     margin-bottom: 20px;
 }
 
-hr {
-    background-color: rgb(217, 248, 215); /* Sets the color to white */
-    width: 100%; /* Sets the width to 100% */
-    height: 10px; /* Sets the height to 10px */
-    border: none; /* Removes the default border */
-    z-index: 9998; /* Sets the z-index, useful if position is specified */
-    position: relative; /* Ensures the z-index works correctly */
-    overflow:hidden;
-}
 
 video {
     width: 100%;
@@ -112,16 +109,25 @@ video {
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.hidden{
-    display: none;
+/*styles for horizontal rule*/
+hr {
+    background-color: rgb(217, 248, 215); /* Sets the color to white */
+    width: 100%; /* Sets the width to 100% */
+    height: 10px; /* Sets the height to 10px */
+    border: none; /* Removes the default border */
+    z-index: 9998; /* Sets the z-index, useful if position is specified */
+    position: relative; /* Ensures the z-index works correctly */
+    overflow:hidden;
 }
+
+
+/* styles for about section */
 
 #about {
     width: 100%;
     max-width: 800px;
     margin-top: 40px;
 }
-
 
 #aboutFilm {
     text-align: center;
@@ -141,6 +147,7 @@ video {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* styles for footer */
 footer {
     background-color: #333;
     color: white;
@@ -153,11 +160,7 @@ footer a {
     text-decoration: none;
 }
 
-/* Additional styles */
-.hidden {
-    display: none;
-}
-
+/*More styles for footer*/
 .email-links a {
     margin-right: 15px; /* Add space between email addresses */
     text-decoration: none; 
@@ -182,3 +185,10 @@ footer a {
     font-size: 1.2em;
     border-radius:10px;
 }
+
+/* Additional styles */
+.hidden {
+    display: none;
+}
+
+

@@ -1,3 +1,6 @@
+//Aadil Chasmawala, June 2024
+
+// This script is used to control the video and the choices that appear at certain times.
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById('main-video');
     const choices = document.getElementById('choices');
@@ -30,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Function to navigate to a specific time in the video
     function navigate(start, end, resume) {
         if (end) {
             video.currentTime = start;
@@ -94,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.navigate = navigate;  // Make the navigate function accessible globally
 });
 
-
+// Function to scroll to a specific section on the page smoothly and with an offset (to account for the fixed header)
 function scrollToSection(id) {
     const element = document.getElementById(id);
     const headerOffset = 150; // Adjust this value based on your header height
